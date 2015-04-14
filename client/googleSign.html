@@ -1,0 +1,48 @@
+<template name="googleSign">
+
+	
+
+	<script>
+		function signinCallback(authResult) {
+		  if (authResult['status']['signed_in']) {
+			// Update the app to reflect a signed in user
+			// Hide the sign-in button now that the user is authorized, for example:
+			document.getElementById('signinButton').setAttribute('style', 'display: none');
+			document.getElementById('signoutButton').setAttribute('style', 'display: block');
+			console.log('Sign-in state: ' + authResult['status']);
+		  } else {
+			// Update the app to reflect a signed out user
+			// Possible error values:
+			//   "user_signed_out" - User is signed-out
+			//   "access_denied" - User denied access to your app
+			//   "immediate_failed" - Could not automatically log in the user
+			console.log('Sign-in state: ' + authResult['error']);
+		  }
+		}
+		
+		function googleSingOut(){
+			gapi.auth.signOut();
+			document.getElementById('signoutButton').setAttribute('style', 'display: none');
+			document.getElementById('signinButton').setAttribute('style', 'display');
+			
+		}
+		function googleSingIn(){
+			console.log('googleSingIn');
+		}
+	</script>
+	
+	
+	<span id="signinButton" onclick=googleSingIn()>
+	  <span
+		class="g-signin"
+		data-callback="signinCallback"
+		data-clientid="733060284105-vr6ni5mkh65j6nv2oegranejubu8lm52.apps.googleusercontent.com"
+		data-cookiepolicy="single_host_origin"
+		data-requestvisibleactions="http://schema.org/AddAction"
+		data-scope="https://www.googleapis.com/auth/plus.login">
+	  </span>
+	</span>
+	
+	<button id="signoutButton" onclick=googleSingOut()>SingOut</button>
+	
+</template>

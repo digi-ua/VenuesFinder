@@ -1,0 +1,51 @@
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+
+#searchform{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5%;
+	
+}
+
+#map-canvas {
+	height: 550px;
+	width:90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 5%;
+	margin-left: 5%;
+
+	border-style: solid;
+	border-width: 3px;
+}
+
+#signoutButton{
+	display:none;
+}
+
+.queriesContainer{
+	height: 60px;
+	width:90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 5%;
+	margin-left: 5%;
+	overflow-y: auto;
+}
+
+#venues{
+	height: 200px;
+	width:90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 5%;
+	margin-left: 5%;
+	overflow-y: auto;
+}
+
+
+
+
+
+
